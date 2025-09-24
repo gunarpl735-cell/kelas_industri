@@ -1,0 +1,82 @@
+<?php
+
+use App\Models\Post;
+use App\Models\Siswa;
+use App\Models\Biodata;
+use App\Http\Controllers\PostsController;
+use App\Http\Controllers\BiodataController;
+use App\Http\Controllers\ProductController;
+use Illuminate\Support\Facades\Route;
+
+Route::get('/', function () {
+    return view('welcome');
+});
+
+Route::get('/about', function () {
+    return 'selamat datang';
+});
+
+Route::get('/biodatas/{nama_lengkap}/{tanggal_lahir}/{jenis_kelamin}',
+ function ($nama_lengkap, $tanggal_lahir, $jenis_kelamin) {
+    return "<h1>biodata</h1><br>" .
+    "Nama lengkap : $nama_lengkap<br>";
+    "Tanggal lahir : $tanggal_lahir<br>";
+    "Jenis kelamin : $jenis_kelamin<br>";
+});
+
+Route::get('halaman2', function () {
+    $hobi = ["muncak","futsal","volly","paskib","makan","ngoding","ngalamun","ngaji","traveling","tidur"];
+    return view('tampil1', compact('hobi'));
+});
+
+Route::get('halaman3', function () {
+    $idola = ["pa mulki","pa wildan","pa ute","prabowo","megawati","jokowi","gibran","al bagir","muller","pa ihsan"];
+    return view('tampil2', compact('idola'));
+});
+
+Route::get('halaman1', function () {
+    $siswa = ["Rudy", "ipat" , "salwa" , "bara" , "ani"];
+    return view('tampil', compact('siswa'));
+});
+// Route :: get('post',function(){
+//     //mengubah
+//    // $post   =post::find(1);
+//     //$post->content = "belajar dengan giat lagi";
+//     //$post->save();
+//     //return $post;
+
+//     //menghapus
+//     //$post   =post::find(1);
+//     //$post->delete();
+//     //return $post;
+
+//     //menambahkan
+//     $post       = new post;
+//     $post->title ="menjadi teman yang baik";
+//     $post->content = "menjadi teman yang baik adalah hal positif";
+//     $post->save();
+//     return $post;
+// });
+// Route :: get('/biodata',function(){
+// // $biodata       = new biodata;
+// // $biodata->nama_lengkap ="burahil";
+// // $biodata->jenis_kelamin = "perempuan";
+// // $biodata->tanggal_lahir ="2009-11-19";
+// // $biodata->tempat_lahir = "tci";
+// // $biodata->agama="kristen";
+// // $biodata->alamat = "sadang";
+// // $biodata->telepon ="938289112";
+// // $biodata->email = "hil@gmail.com";
+// // $biodata->save();
+// // return $biodata;
+// $biodata = biodata::all();
+// return view('halaman_biodata',compact('biodata'));
+// });
+
+Route ::get('post',[PostsController::class,'tampil']);
+Route ::get('biodata',[BiodataController::class,'tampil']);
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/product', [App\Http\Controllers\ProductController::class, 'index'])->name('product');

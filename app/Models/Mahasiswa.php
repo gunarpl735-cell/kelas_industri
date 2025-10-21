@@ -16,4 +16,11 @@ class Mahasiswa extends Model
     {
         return $this->belongsTo(Dosen::class, 'id_dosen');
     }
+    // app/Models/Mahasiswa.php
+    public function hobis()
+{
+    return $this->belongsToMany(Hobi::class, 'mahasiswa_hobi', 'id_mahasiswa', 'id_hobi');
+}
+
+
 }

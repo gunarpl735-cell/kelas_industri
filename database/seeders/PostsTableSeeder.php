@@ -15,11 +15,11 @@ class PostsTableSeeder extends Seeder
     {
         DB::table('posts')->insert([
             [
-                'tittle' => 'Tips Cepat Pintar',
+                'title' => 'Tips Cepat Pintar',
                 'content' => 'lorem ipsum',
             ],
             [
-                'tittle' => 'Membangun Visi Misi Sukses',
+                'title' => 'Membangun Visi Misi Sukses',
                 'content' => 'lorem ipsum',
             ],
         ]);

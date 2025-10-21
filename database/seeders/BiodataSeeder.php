@@ -16,7 +16,7 @@ class BiodataSeeder extends Seeder
             [
                 'nama_lengkap' => 'guna',
                 'jenis_kelamin' => 'laki-laki',
-                'tanggal_lahir' => '2008-12-13',
+                'tanggal_lahir' => '2008-10-10',
                 'tempat_lahir' => 'garut',
                 'agama' => 'islam',
                 'alamat' => 'bojong',
@@ -26,7 +26,7 @@ class BiodataSeeder extends Seeder
             [
                 'nama_lengkap' => 'eja',
                 'jenis_kelamin' => 'laki-laki',
-                'tanggal_lahir' => '2008-11-12',
+                'tanggal_lahir' => '2008-10-10',
                 'tempat_lahir' => 'garut',
                 'agama' => 'islam',
                 'alamat' => 'bojong',
@@ -56,7 +56,7 @@ class BiodataSeeder extends Seeder
              [
                 'nama_lengkap' => 'jauf',
                 'jenis_kelamin' => 'laki-laki',
-                'tanggal_lahir' => '2008-08-16',
+                'tanggal_lahir' => '2008-08-10',
                 'tempat_lahir' => 'garut',
                 'agama' => 'islam',
                 'alamat' => 'bojong',
@@ -66,7 +66,7 @@ class BiodataSeeder extends Seeder
              [
                 'nama_lengkap' => 'fadil',
                 'jenis_kelamin' => 'laki-laki',
-                'tanggal_lahir' => '2008-07-19',
+                'tanggal_lahir' => '2008-07-10',
                 'tempat_lahir' => 'garut',
                 'agama' => 'islam',
                 'alamat' => 'bojong',
@@ -76,7 +76,7 @@ class BiodataSeeder extends Seeder
              [
                 'nama_lengkap' => 'ipat',
                 'jenis_kelamin' => 'laki-laki',
-                'tanggal_lahir' => '2008-06-17',
+                'tanggal_lahir' => '2008-06-10',
                 'tempat_lahir' => 'garut',
                 'agama' => 'islam',
                 'alamat' => 'bojong',

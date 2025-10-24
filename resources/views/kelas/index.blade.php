@@ -5,7 +5,7 @@
     <div class="row justify-content-center">
         <div class="col-md-12">
             <div class="card">
-                <div class="card-header">data pengguna</div>
+                <div class="card-header">data kelas</div>
 
                 <div class="card-body">
                     @if(session('success'))
@@ -16,27 +16,27 @@
                     </div>
                         
                     @endif
-                    <a href="{{ route('pengguna.create')}}" class= "btn btn-primary">add</a>
+                    <a href="{{ route('kelas.create')}}" class= "btn btn-primary">add</a>
                  <table class="table">
                     <thead>
                         <tr>
                         <th scope="col">No</th>
-                        <th scope="col">Nama</th>
+                        <th scope="col">Nama Kelas</th>
                         <th scope="col">aksi</th>
                         </tr>
                     </thead>
                     <tbody>
                         @php $no = 1; @endphp
-                        @foreach($pengguna as $data)
+                        @foreach($kelas as $data)
                         <tr>
                         <td>{{$no++}}</td>
-                        <td>{{$data->nama}}</td>
+                        <td>{{$data->nama_kelas}}</td>
                         <td>
-                                    <form action="{{route('pengguna.destroy',$data->id)}}" method="POST">
+                                    <form action="{{route('kelas.destroy',$data->id)}}" method="POST">
                                         @csrf
                                         @method('DELETE')
-                                        <a href="{{route('pengguna.edit',$data->id)}}" class="btn btn-success">Edit</a>
-                                        <a href="{{route('pengguna.show',$data->id)}}" class="btn btn-warning">Show</a>
+                                        <a href="{{route('kelas.edit',$data->id)}}" class="btn btn-success">Edit</a>
+                                        <a href="{{route('kelas.show',$data->id)}}" class="btn btn-warning">Show</a>
 
                                         <button type="submit" class="btn btn-danger"
                                         onclick="return confirm('apakah anda yakin?')">Delete</button>

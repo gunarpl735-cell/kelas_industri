@@ -4,13 +4,25 @@ use App\Models\Post;
 use App\Models\Siswa;
 use App\Models\Biodata;
 use App\Models\Pengguna;
+use App\Models\Telepon;
 use App\Models\Wali;
 use App\Models\Hobi;
+use App\Models\Kelas;
+use App\Models\Murid;
+use App\Models\Barang;
+use App\Models\Pembeli;
+use App\Models\Transaksi;
 use App\Http\Controllers\PostsController;
 use App\Http\Controllers\BiodataController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\PenggunaController;
+use App\Http\Controllers\TeleponController;
 use App\Http\Controllers\RelasiController;
+use App\Http\Controllers\KelasController;
+use App\Http\Controllers\MuridController;
+use App\Http\Controllers\BarangController;
+use App\Http\Controllers\PembeliController;
+use App\Http\Controllers\TransaksiController;
 use Illuminate\Support\Facades\Route;
 
 
@@ -91,6 +103,7 @@ Route::get('/product', [App\Http\Controllers\ProductController::class, 'index'])
 Route::resource('post',PostsController::class);
 
 Route::resource('pengguna',PenggunaController::class);
+Route::resource('telepon',TeleponController::class);
 Route::get('/one-to-one', [RelasiController::class, 'oneToOne']);
 Route::get('/wali-ke-mahasiswa', function () {
     $wali = Wali::with('mahasiswa')->first();
@@ -109,3 +122,8 @@ Route::get('/hobi/bola', function () {
     }
 });
 Route::get('eloquent', [RelasiController::class, 'eloquent']);
+Route::resource('kelas',KelasController::class);
+Route::resource('murid',MuridController::class);
+Route::resource('barang',BarangController::class);
+Route::resource('pembeli',PembeliController::class);
+Route::resource('transaksi',TransaksiController::class);
